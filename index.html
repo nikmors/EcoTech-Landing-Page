@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" data-theme="light"> <!--<![endif]-->
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>EcoTech Systems</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="./styles.css">
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
+    </head>
+    <body>
+        <header>
+            <div class="toggle-container">
+                <h3 id="TextSwitch" style="-webkit-user-select: none; user-select: none;">SwitchMode</h3>
+                <input type="checkbox" id="switch" name="theme" /><label for="switch">Toggle</label>
+            </div>
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="#" class="nav-link" id="undelined">Home</a></li>
+                    <li><a href="#" class="nav-link">About</a></li>
+                    <li><a href="#" class="nav-link">Services</a></li>
+                </ul>
+            </nav>
+        </header>
+        <main>
+            <section class="presentation">
+                <div class="introduction">
+                    <div class="intro-text">
+                        <h1>
+                            <span class="echo-text">Eco</span><span class="tech-text">Tech</span>
+                        </h1>
+                        <p><b>EcoTech</b> is transforming the way the world works by delivering products and services that connect the physical and digital worlds. Core technologies in positioning, modeling, connectivity and data analytics enable customers to improve productivity, quality, safety and sustainability. From purpose built products to enterprise lifecycle solutions, Trimble software, hardware and services are transforming a broad range of industries such as agriculture, construction, geospatial and transportation and logistics. </p>
+                    </div>
+                    <div class="cta">
+                        <button class="cta-select">Look Inside</button>
+                    </div>
+                    <div class="cover">
+                        <object>
+                            <embed src="./Leaves_illustrations_Green.svg" >
+                        </object>
+                    </div>
+                </div>
+            </section>
+            <div class="trasparent-text">Green Technology</div>
+        </main>
+        <script>
+             var checkbox = document.querySelector('input[name=theme]');
+
+            checkbox.addEventListener('change', function() {
+                if(this.checked) {
+                    trans()
+                    document.documentElement.setAttribute('data-theme', 'dark')
+                } else {
+                    trans()
+                    document.documentElement.setAttribute('data-theme', 'light')
+                }
+            })
+
+            let trans = () => {
+                document.documentElement.classList.add('transition');
+                window.setTimeout(() => {
+                    document.documentElement.classList.remove('transition')
+                }, 1000)
+            }
+
+        </script>
+    </body>
+</html>

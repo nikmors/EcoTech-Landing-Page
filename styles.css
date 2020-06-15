@@ -1,0 +1,287 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@900&display=swap");
+html {
+  --bg-colour: #FEFFFE;
+  --text-menu-colour: #A0D5B5;
+  --SwitchToggle-text-colour: #1034A6;
+  --ECO-text-colour: #00B193;
+  --border-button-colour: #00B193;
+  --TECH-text-colour: #1034A6;
+  --toggle-disabled-colour: #BCE0FD;
+  --toggle-enabled-colour: #2699FB;
+  --paragraph-colour: #848587;
+}
+
+/*////////////Dark Mode: Start ////////////////////////////////////////////////////////////////////////////////////////////*/
+html[data-theme='dark'] {
+  --bg-colour: #02081C;
+  --text-menu-colour: #FFFFFF;
+  --SwitchToggle-text-colour: #FFFFFF;
+  --ECO-text-colour: #33D6BB;
+  --border-button-colour: #0D04FF;
+  --TECH-text-colour: #0D04FF;
+  --toggle-disabled-colour: #BCE0FD;
+  --toggle-enabled-colour: #2699FB;
+  --paragraph-colour: #f5f5f5;
+  --Neon-light: 0 0 5px #FFF, 0 0 10px #FFF, 0 0 15px #FFF, 0 0 20px #0D04FF, 0 0 30px #0D04FF, 0 0 40px #0D04FF, 0 0 55px #0D04FF, 0 0 75px #0D04FF;
+  --Neon-light-green: 0 0 5px #FFF, 0 0 20px #33D6BB, 0 0 30px #33D6BB, 0 0 40px #33D6BB, 0 0 55px #33D6BB, 0 0 75px #33D6BB;
+}
+
+html[data-theme='dark'] .cover object {
+  content: url(Leaves_illustrations_Blue.svg);
+  margin-top: -200px;
+}
+
+html[data-theme='dark'] .nav-link {
+  font-size: 26px;
+  text-decoration: none;
+  color: var(--text-menu-colour);
+  text-shadow: var(--Neon-light);
+}
+
+html[data-theme='dark'] #undelined {
+  border-bottom: 5px solid var(--text-menu-colour);
+  text-shadow: var(--Neon-light);
+}
+
+html[data-theme='dark'] .cta-select {
+  border-style: none;
+  background-color: var(--bg-colour);
+  color: var(--text-menu-colour);
+  text-shadow: var(--Neon-light);
+}
+
+html[data-theme='dark'] #TextSwitch {
+  color: var(--SwitchToggle-text-colour);
+  text-shadow: var(--Neon-light-green);
+}
+
+/*////////////Dark Mode: End ////////////////////////////////////////////////////////////////////////////////////////////*/
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+body {
+  font-family: 'Montserrat', sans-serif;
+  background: var(--bg-colour);
+}
+
+button, p, h1, .trasparent-text {
+  font-family: 'Montserrat', sans-serif;
+}
+
+header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 90%;
+  margin: auto;
+  height: 10vh;
+}
+
+.toggle-container {
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+}
+
+#TextSwitch {
+  color: var(--SwitchToggle-text-colour);
+}
+
+nav {
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+}
+
+.nav-links {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  list-style: none;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 600;
+}
+
+.nav-link {
+  font-size: 26px;
+  text-decoration: none;
+  color: var(--text-menu-colour);
+}
+
+#undelined {
+  border-bottom: 5px solid var(--text-menu-colour);
+}
+
+.toggle-container h3 {
+  margin-bottom: -15px;
+}
+
+/*///////////toggle////////////*/
+input[type=checkbox] {
+  height: 0;
+  width: 0;
+  visibility: hidden;
+}
+
+label {
+  cursor: pointer;
+  text-indent: -9999px;
+  width: 128px;
+  height: 40px;
+  background: var(--toggle-disabled-colour);
+  display: block;
+  border-radius: 100px;
+  position: relative;
+}
+
+label:after {
+  content: "";
+  position: absolute;
+  top: 4px;
+  left: 4px;
+  width: 32px;
+  height: 32px;
+  background: #fff;
+  border-radius: 90px;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+}
+
+input:checked + label {
+  background: var(--toggle-enabled-colour);
+}
+
+input:checked + label:after {
+  left: calc(100% - 5px);
+  -webkit-transform: translateX(-100%);
+          transform: translateX(-100%);
+}
+
+label:active:after {
+  width: 130px;
+}
+
+/*///////////toggle////////////*/
+main {
+  overflow: hidden;
+}
+
+.presentation {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 710px;
+  margin: auto;
+  min-height: 80vh;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.introduction {
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+}
+
+.cover {
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+}
+
+.cover object {
+  position: fixed;
+  left: 80%;
+  top: 0%;
+  width: 591px;
+  height: 1291px;
+}
+
+.intro-text h1 {
+  font-size: 170px;
+  font-weight: 600;
+}
+
+p {
+  width: 682px;
+  height: 222px;
+  font-size: 20px;
+  text-align: left;
+  margin: auto;
+  padding-top: 10px;
+  color: var(--paragraph-colour);
+}
+
+.echo-text {
+  color: var(--ECO-text-colour);
+}
+
+.tech-text {
+  color: var(--TECH-text-colour);
+}
+
+.cta {
+  padding-top: 50px;
+  text-align: center;
+}
+
+.cta-select {
+  border: 2px solid var(--border-button-colour);
+  background-color: var(--text-menu-colour);
+  border-radius: 20px 0 20px 0;
+  width: 244px;
+  height: 57px;
+  color: white;
+  text-align: center;
+  font-size: 24px;
+  font-weight: 600;
+  cursor: pointer;
+  z-index: 10;
+}
+
+.trasparent-text {
+  width: 2061px;
+  height: 254px;
+  font-size: 209px;
+  font-weight: 900;
+  color: var(--text-menu-colour);
+  opacity: 0.08;
+  margin-left: -49px;
+  margin-top: -200px;
+  z-index: -1;
+  /* Cannot select the text with the cursor */
+  -webkit-touch-callout: none;
+  /* iOS Safari */
+  -webkit-user-select: none;
+  /* Safari */
+  /* Konqueror HTML */
+  -moz-user-select: none;
+  /* Old versions of Firefox */
+  -ms-user-select: none;
+  /* Internet Explorer/Edge */
+  user-select: none;
+  /* Non-prefixed version, currently
+                                  supported by Chrome, Edge, Opera and Firefox */
+}
+
+html.transition,
+html.transition *,
+html.transition *:before,
+html.transition *:after {
+  -webkit-transition: all 750ms !important;
+  transition: all 750ms !important;
+  -webkit-transition-delay: 0 !important;
+          transition-delay: 0 !important;
+}
+/*# sourceMappingURL=styles.css.map */
